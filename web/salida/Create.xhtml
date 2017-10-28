@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateSalidaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateSalidaLabel_salidaId}" for="salidaId" />
+                    <h:inputText id="salidaId" value="#{salidaController.selected.salidaId}" title="#{bundle.CreateSalidaTitle_salidaId}" required="true" requiredMessage="#{bundle.CreateSalidaRequiredMessage_salidaId}"/>
+                    <h:outputLabel value="#{bundle.CreateSalidaLabel_observaciones}" for="observaciones" />
+                    <h:inputText id="observaciones" value="#{salidaController.selected.observaciones}" title="#{bundle.CreateSalidaTitle_observaciones}" required="true" requiredMessage="#{bundle.CreateSalidaRequiredMessage_observaciones}"/>
+                    <h:outputLabel value="#{bundle.CreateSalidaLabel_horaSalida}" for="horaSalida" />
+                    <h:inputText id="horaSalida" value="#{salidaController.selected.horaSalida}" title="#{bundle.CreateSalidaTitle_horaSalida}" required="true" requiredMessage="#{bundle.CreateSalidaRequiredMessage_horaSalida}"/>
+                    <h:outputLabel value="#{bundle.CreateSalidaLabel_fechaSalida}" for="fechaSalida" />
+                    <h:inputText id="fechaSalida" value="#{salidaController.selected.fechaSalida}" title="#{bundle.CreateSalidaTitle_fechaSalida}" required="true" requiredMessage="#{bundle.CreateSalidaRequiredMessage_fechaSalida}"/>
+                    <h:outputLabel value="#{bundle.CreateSalidaLabel_idEntrada}" for="idEntrada" />
+                    <h:selectOneMenu id="idEntrada" value="#{salidaController.selected.idEntrada}" title="#{bundle.CreateSalidaTitle_idEntrada}" required="true" requiredMessage="#{bundle.CreateSalidaRequiredMessage_idEntrada}">
+                        <f:selectItems value="#{entradaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{salidaController.create}" value="#{bundle.CreateSalidaSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{salidaController.prepareList}" value="#{bundle.CreateSalidaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateSalidaIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

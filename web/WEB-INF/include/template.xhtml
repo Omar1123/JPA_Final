@@ -12,12 +12,7 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
 
-    <!-- DatePicker JavaScript & CSS -->
-09
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js" />
-10
-    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" />
-11
+    <!-- DatePicker JavaScript & CSS -->    
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
     
     <title>Discoteca</title>
@@ -40,6 +35,19 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <h:outputScript name="bootstrap-3.3.7-dist/js/bootstrap.min.js"/>
+    <h:outputScript name="bootstrap-3.3.7-dist/js/bootstrap.min.js"/>   
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $.noConflict();
+        jQuery(document).ready(function ($) {
+            $(".datetimepicker1").datepicker({
+                dateFormat: 'dd MM, yy',
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "1960:2017"
+             });
+        });
+    </script>
   </h:body>
 </html>

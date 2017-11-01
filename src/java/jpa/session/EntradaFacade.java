@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jpa.sessions;
+package jpa.session;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import jpa.entities.Salida;
+import jpa.entities.Entrada;
 
 /**
  *
  * @author jake
  */
 @Stateless
-public class SalidaFacade extends AbstractFacade<Salida> {
+public class EntradaFacade extends AbstractFacade<Entrada> {
 
     @PersistenceContext(unitName = "PersonalPU")
     private EntityManager em;
@@ -25,8 +25,8 @@ public class SalidaFacade extends AbstractFacade<Salida> {
         return em;
     }
 
-    public SalidaFacade() {
-        super(Salida.class);
+    public EntradaFacade() {
+        super(Entrada.class);
     }
     
 }

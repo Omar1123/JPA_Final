@@ -19,6 +19,10 @@
                     <h:inputText id="entradaId" value="#{entradaController.selected.entradaId}" title="#{bundle.EditEntradaTitle_entradaId}" required="true" requiredMessage="#{bundle.EditEntradaRequiredMessage_entradaId}"/>
                     <h:outputLabel value="#{bundle.EditEntradaLabel_nombrePersona}" for="nombrePersona" />
                     <h:inputText id="nombrePersona" value="#{entradaController.selected.nombrePersona}" title="#{bundle.EditEntradaTitle_nombrePersona}" required="true" requiredMessage="#{bundle.EditEntradaRequiredMessage_nombrePersona}"/>
+                    <h:outputLabel value="#{bundle.EditEntradaLabel_horaEntrada}" for="horaEntrada" />
+                    <h:inputText id="horaEntrada" value="#{entradaController.selected.horaEntrada}" title="#{bundle.EditEntradaTitle_horaEntrada}" required="true" requiredMessage="#{bundle.EditEntradaRequiredMessage_horaEntrada}"/>
+                    <h:outputLabel value="#{bundle.EditEntradaLabel_fechaEntrada}" for="fechaEntrada" />
+                    <h:inputText id="fechaEntrada" value="#{entradaController.selected.fechaEntrada}" title="#{bundle.EditEntradaTitle_fechaEntrada}" />
                 </h:panelGrid>
                 <h:commandLink action="#{entradaController.update}" value="#{bundle.EditEntradaSaveLink}"/>
                 <br />

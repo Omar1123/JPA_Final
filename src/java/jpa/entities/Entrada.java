@@ -33,7 +33,9 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "Entrada.findAll", query = "SELECT e FROM Entrada e")
     , @NamedQuery(name = "Entrada.findByEntradaId", query = "SELECT e FROM Entrada e WHERE e.entradaId = :entradaId")
-    , @NamedQuery(name = "Entrada.findByNombrePersona", query = "SELECT e FROM Entrada e WHERE e.nombrePersona = :nombrePersona")})
+    , @NamedQuery(name = "Entrada.findByNombrePersona", query = "SELECT e FROM Entrada e WHERE e.nombrePersona = :nombrePersona")
+    , @NamedQuery(name = "Entrada.findByHoraEntrada", query = "SELECT e FROM Entrada e WHERE e.horaEntrada = :horaEntrada")
+    , @NamedQuery(name = "Entrada.findByFechaEntrada", query = "SELECT e FROM Entrada e WHERE e.fechaEntrada = :fechaEntrada")})
 public class Entrada implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -47,6 +49,14 @@ public class Entrada implements Serializable {
     @Size(min = 1, max = 100)
     @Column(name = "nombre_persona")
     private String nombrePersona;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Column(name = "hora_entrada")
+    private String horaEntrada;
+    @Size(max = 50)
+    @Column(name = "fecha_entrada")
+    private String fechaEntrada;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idEntrada")
     private Collection<Salida> salidaCollection;
 
@@ -57,9 +67,10 @@ public class Entrada implements Serializable {
         this.entradaId = entradaId;
     }
 
-    public Entrada(Integer entradaId, String nombrePersona) {
+    public Entrada(Integer entradaId, String nombrePersona, String horaEntrada) {
         this.entradaId = entradaId;
         this.nombrePersona = nombrePersona;
+        this.horaEntrada = horaEntrada;
     }
 
     public Integer getEntradaId() {
@@ -76,6 +87,22 @@ public class Entrada implements Serializable {
 
     public void setNombrePersona(String nombrePersona) {
         this.nombrePersona = nombrePersona;
+    }
+
+    public String getHoraEntrada() {
+        return horaEntrada;
+    }
+
+    public void setHoraEntrada(String horaEntrada) {
+        this.horaEntrada = horaEntrada;
+    }
+
+    public String getFechaEntrada() {
+        return fechaEntrada;
+    }
+
+    public void setFechaEntrada(String fechaEntrada) {
+        this.fechaEntrada = fechaEntrada;
     }
 
     @XmlTransient

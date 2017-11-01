@@ -3,7 +3,7 @@ package jsf;
 import jpa.entities.Entrada;
 import jsf.util.JsfUtil;
 import jsf.util.PaginationHelper;
-import jpa.sessions.EntradaFacade;
+import jpa.session.EntradaFacade;
 
 import java.io.Serializable;
 import java.util.ResourceBundle;
@@ -25,7 +25,7 @@ public class EntradaController implements Serializable {
     private Entrada current;
     private DataModel items = null;
     @EJB
-    private jpa.sessions.EntradaFacade ejbFacade;
+    private jpa.session.EntradaFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
 

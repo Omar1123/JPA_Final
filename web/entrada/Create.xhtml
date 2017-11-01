@@ -53,6 +53,18 @@
                             </div>
                         </div>                        
                         <div class="form-group">
+                            <h:outputLabel value="Hora salida" styleClass="control-label col-sm-2" />
+                            <div class="col-sm-10">
+                                <h:inputText value="#{entradaController.selected.horaEntrada}" styleClass="form-control" />
+                            </div>
+                        </div>    
+                        <div class="form-group">
+                            <h:outputLabel value="Fecha salida" styleClass="control-label col-sm-2" />
+                            <div class="col-sm-10">
+                                <h:inputText value="#{entradaController.selected.fechaEntrada}" styleClass="form-control" />
+                            </div>
+                        </div>    
+                        <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <h:commandButton value="Guardar" action="#{entradaController.create}" styleClass="btn btn-default" />
                             </div>
@@ -73,3 +85,80 @@
     </ui:define>
   </ui:composition>        
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateEntradaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateEntradaLabel_entradaId}" for="entradaId" />
+                    <h:inputText id="entradaId" value="#{entradaController.selected.entradaId}" title="#{bundle.CreateEntradaTitle_entradaId}" required="true" requiredMessage="#{bundle.CreateEntradaRequiredMessage_entradaId}"/>
+                    <h:outputLabel value="#{bundle.CreateEntradaLabel_nombrePersona}" for="nombrePersona" />
+                    <h:inputText id="nombrePersona" value="#{entradaController.selected.nombrePersona}" title="#{bundle.CreateEntradaTitle_nombrePersona}" required="true" requiredMessage="#{bundle.CreateEntradaRequiredMessage_nombrePersona}"/>
+                    <h:outputLabel value="#{bundle.CreateEntradaLabel_horaEntrada}" for="horaEntrada" />
+                    <h:inputText id="horaEntrada" value="#{entradaController.selected.horaEntrada}" title="#{bundle.CreateEntradaTitle_horaEntrada}" required="true" requiredMessage="#{bundle.CreateEntradaRequiredMessage_horaEntrada}"/>
+                    <h:outputLabel value="#{bundle.CreateEntradaLabel_fechaEntrada}" for="fechaEntrada" />
+                    <h:inputText id="fechaEntrada" value="#{entradaController.selected.fechaEntrada}" title="#{bundle.CreateEntradaTitle_fechaEntrada}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{entradaController.create}" value="#{bundle.CreateEntradaSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{entradaController.prepareList}" value="#{bundle.CreateEntradaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateEntradaIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>-->

@@ -19,6 +19,7 @@
 
     <!-- Bootstrap core CSS -->
     <h:outputStylesheet name="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+    <h:outputStylesheet name="css/jquery.timepicker.css"/>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <f:verbatim>
@@ -33,11 +34,11 @@
     <ui:insert name="body"/>
     <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <h:outputScript name="bootstrap-3.3.7-dist/js/bootstrap.min.js"/>   
+    <!-- Placed at the end of the document so the pages load faster -->        
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+    <h:outputScript name="bootstrap-3.3.7-dist/js/bootstrap.min.js"/>   
+    <h:outputScript name="js/jquery.timepicker.min.js"/>   
     <script type="text/javascript">
         $.noConflict();
         jQuery(document).ready(function ($) {
@@ -46,8 +47,9 @@
                 changeMonth: true,
                 changeYear: true,
                 yearRange: "1960:2017"
-            });
-        });
+            });            
+            $(".datetimepicker2").timepicker({ 'scrollDefault': 'now' });
+        });        
     </script>
   </h:body>
 </html>
